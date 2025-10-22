@@ -1,0 +1,48 @@
+html {
+    background-color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 20px, auto;
+    background-color: rgb(255, 0, 0);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
+section {
+    margin: 10%;
+    padding: 5%;
+    color: white;
+    border: white;
+    border-style: solid;
+}
+
+
+footer {
+    font-size: smaller;
+    text-align: center;
+    background-color: white;
+
+}
