@@ -55,8 +55,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #000000; /* Change to your desired hover color */
-    color: rgb(255, 255, 255); /* Change text color on hover */
+    background-color: #000000;
+    color: rgb(255, 255, 255);
 }
 
 /* Section hover effect */
