@@ -46,3 +46,50 @@ footer {
     background-color: white;
 
 }
+
+/* Navigation link styles */
+nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px 15px; /* Add padding for better click area */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+nav ul li a:hover {
+    background-color: #000000; /* Change to your desired hover color */
+    color: rgb(255, 255, 255); /* Change text color on hover */
+}
+
+/* Section hover effect */
+section {
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+section:hover {
+    transform: scale(1.02); /* Scale up the section on hover */
+}
+
+/* Table styling */
+table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Collapse borders */
+    margin: 20px 0; /* Margin for spacing */
+}
+
+th, td {
+    border: 1px solid #ccc; /* Border for table cells */
+    padding: 10px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+}
+
+thead {
+    background-color: red; /* Header background color */
+}
+
+/* Main content section interactivity */
+.main-content {
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.main-content:hover {
+    transform: scale(1.05); /* Zoom in on hover */
+}
