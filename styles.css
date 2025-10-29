@@ -7,89 +7,157 @@ header {
     text-align: center;
     font-size: 20px;
     font-weight: bolder;
-    padding: 20px, auto;
+    padding: 20px;
     background-color: rgb(255, 0, 0);
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #333333;
-  display: flex;
-  justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    display: flex;
+    justify-content: center;
 }
 
 ul li a {
-  display: block;
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
 ul li a:hover {
-  background-color: #111111;
+    background-color: #111111;
 }
 
 section {
     margin: 10%;
     padding: 5%;
     color: white;
-    border: white;
-    border-style: solid;
+    border: 1px solid white;
+    transition: transform 0.3s ease;
 }
 
+section:hover {
+    transform: scale(1.02);
+}
 
 footer {
     font-size: smaller;
     text-align: center;
     background-color: white;
-
+    color: black;
 }
 
-/* Navigation link styles */
-nav ul li a {
-    text-decoration: none; /* Remove underline from links */
-    padding: 10px 15px; /* Add padding for better click area */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-}
-
-nav ul li a:hover {
-    background-color: #000000;
-    color: rgb(255, 255, 255);
-}
-
-/* Section hover effect */
-section {
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
-}
-
-section:hover {
-    transform: scale(1.02); /* Scale up the section on hover */
-}
-
-/* Table styling */
 table {
-    width: 100%; /* Full width */
-    border-collapse: collapse; /* Collapse borders */
-    margin: 20px 0; /* Margin for spacing */
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
 
 th, td {
-    border: 1px solid #ccc; /* Border for table cells */
-    padding: 10px; /* Padding for table cells */
-    text-align: left; /* Align text to the left */
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
 }
 
 thead {
-    background-color: red; /* Header background color */
+    background-color: red;
 }
 
-/* Main content section interactivity */
+
 .main-content {
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    transition: transform 0.3s ease;
 }
 
 .main-content:hover {
-    transform: scale(1.05); /* Zoom in on hover */
+    transform: scale(1.05);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: red;
+}
+
+button {
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 96px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+@media (min-widtch: 320px) {
+    main {
+        flex-direction: column;
+    }
+}
+
+@media (min-widtch: 768px) {
+    main {
+        flex-direction: row;
+    }
+}
+
+.back-to-top {
+    position: fixed; /* Fixed position to stay in place */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    background-color: rgb(255, 0, 0); /* Button background color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    display: none; /* Initially hidden */
+    transition: background-color 0.3s ease; /* Transition for background color */
+}
+
+.back-to-top:hover {
+    background-color: darkred; /* Darken button on hover */
+}
+
+/* Show the button when scrolled down */
+body.scrolled .back-to-top {
+    display: block; /* Show the button */
 }
