@@ -18,3 +18,5 @@ The website is to help me learn to build a modern webpage, as part of the course
 - Navigation menu
 - Image gallery
 - Contact form
+
+<img width="1917" height="1079" alt="image" src="https://github.com/user-attachments/assets/289a4fbc-d816-4e41-8999-aae4205f83db" />
