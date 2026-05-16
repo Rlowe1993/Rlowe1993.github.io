@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('fonts/OpenDyslexic-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('fonts/OpenDyslexic-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('fonts/OpenDyslexic-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('fonts/OpenDyslexic-BoldItalic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+.dyslexic-mode {
+    font-family: 'OpenDyslexic', Arial, Helvetica, sans-serif;
+}
+
+.dyslexic-button {
+    font-family: 'OpenDyslexic', Arial, Helvetica, sans-serif;
+}
+
+#accessibilityMenu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+#accessibilityToggle {
+    padding: 0.6rem 0.9rem;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+#accessibilityToggle:hover {
+    background-color: #666;
+}
+
+#accessibilityPanel {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    flex-direction: column;
+    width: max-content;
+}
+
+#accessibilityPanel button {
+    margin-bottom: 8px;
+    padding: 0.5rem 1rem;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#accessibilityPanel button:hover {
+    background-color: #777;
+}
+
+.dark-mode {
+    background-color: #111;
+    color: #eee;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #accessibilityMenu:hover #accessibilityPanel {
+        display: flex;
+    }
+}

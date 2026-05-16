@@ -1,5 +1,77 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/accessibility.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <title>Randall Lowe's Homepage</title>
+    </head>
+
     <body>
-        <h3>Test Commit</h3>
+        
+        <header>
+            <h1 id="welcomeMessage">Welcome!</h1>
+        </header>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hi, I'm Randall. I'm currently studying software development.
+                I have personal experience in Python, Rust, and Bash. I have
+                had classes on C, Java, SQL, and currently am studying
+                JavaScript.
+            </p>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>My Projects</h2>
+
+            <a href="https://github.com/placeholder1" target="_blank">
+                <img src="https://via.placeholder.com/200" alt="Project 1 - Placeholder">
+            </a>
+
+            <a href="https://github.com/placeholder2" target="_blank">
+                <img src="https://via.placeholder.com/200" alt="Project 2 - Placeholder">
+            </a>
+
+            <a href="https://github.com/placeholder3" target="_blank">
+                <img src="https://via.placeholder.com/200" alt="Project 3 - Placeholder">
+            </a>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email Address" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <div id="accessibilityMenu">
+            <button id="accessibilityToggle" class="dyslexic-button">
+                <i class="fa-solid fa-universal-access"></i>
+            </button>
+
+
+            <div id="accessibilityPanel">
+                <button id="toggleDyslexic" class="dyslexic-button">Dyslexic Font</button>
+                <button id="toggleDarkMode" class="dyslexic-button">Dark Mode</button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
