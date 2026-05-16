@@ -15,6 +15,7 @@ const accessibilityMenu = document.getElementById("accessibility")
 const accessibilityToggle = document.getElementById("accessibilityToggle");
 const accessibilityPanel = document.getElementById("accessibilityPanel");
 
+// Event listener for touchscreen tap to open
 accessibilityToggle.addEventListener("click", (event) => {
     if (!isTouchDevice()) return;
     
@@ -23,6 +24,7 @@ accessibilityToggle.addEventListener("click", (event) => {
     accessibilityPanel.style.display = isOpen ? "none" : "flex";
 });
 
+// Event listener listener for touchscreen tap to close
 document.addEventListener("click", (event) => {
     if (!isTouchDevice()) return;
     
@@ -39,12 +41,12 @@ dysToggle.addEventListener("click", () => {
 
 // Dark mode toggle
 const darkToggle = document.getElementById("toggleDarkMode");
-
 darkToggle.addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark-mode")
     darkToggle.textContent = isDark ? "Light Made" : "Dark Mode";
 });
 
+// Helper function to determine if device is a touchscreen
 function isTouchDevice() {
     return window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 }
