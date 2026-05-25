@@ -6,10 +6,10 @@ const personalDiv = document.getElementById("personalProjects");
 
 if (projectImages.length < 3) {
     universityDiv.style.display = "";
-    personalDiv.style.display = "block";
+    personalDiv.style.display = "";
 } else {
     universityDiv.style.display = "none";
-    personalDiv.style.display = "block";
+    personalDiv.style.display = "";
 }
 
 // Skills Loop
@@ -39,12 +39,14 @@ darkButtons.forEach(button => {
 // Form Submit Interactivity
 
 const form = document.querySelector("#contact form");
-const nameInput = form.querySelector("input[type='text']");
-const submitButoon = form.querySelector("button");
+const nameInput = document.getElementById("contactName");
+const submitButton = document.getElementById("contactSubmit");
 
-submitButoon.addEventListener("click", (event) => {
+submitButton.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const name = nameInput.ariaValueMax.trim();
-    alert(`Thank you, ${name}, your message has been sent!`);
+    const name = nameInput.value.trim();
+    alert(`Thank you, ${name}, your message has been sent!`)
+
+    form.reset();
 });
