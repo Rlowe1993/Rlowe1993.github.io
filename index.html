@@ -16,6 +16,10 @@
             <h1 id="welcomeMessage">Welcome!</h1>
         </header>
 
+        <label id="darkModeSlider">
+            <button id="topDarkMode" class="dark-toggle">Dark Mode</button>
+        </label>
+
         <nav>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
@@ -30,22 +34,40 @@
                 had classes on C, Java, SQL, and currently am studying
                 JavaScript.
             </p>
+            <ul id="skillsList"></ul>
+        </section>
+
+        <section id="featured">
+            <h2>Featured Content</h2>
+
+            <div id="universityResources" class="feature-box">
+                <h3>University Resources</h3>
+                <a href="http://ecpi.edu/" target="_blank">ECPI Homepage</a>
+                <a href="http://chsn.ecpi.net/"> ECPI Charleston Campus Homepage</a>
+            </div>
+
+            <div id="personalProjects" class="feature-box">
+                <h3>Personal Projects</h3>
+                <a href="https://github.com/Rlowe1993/cd-util" target="_blank">
+                <img src="images\cd-util.png" alt="GitHub Preview - cd-util">
+            </a>
+            </div>
         </section>
 
         <section id="projects" class="projects">
             <h2>My Projects</h2>
 
-            <a href="https://github.com/placeholder1" target="_blank">
-                <img src="https://via.placeholder.com/200" alt="Project 1 - Placeholder">
+            <a href="https://github.com/Rlowe1993/cd-util" target="_blank">
+                <img src="images\cd-util.png" alt="GitHub Preview - cd-util">
             </a>
 
-            <a href="https://github.com/placeholder2" target="_blank">
+            <!-- <a href="https://github.com/placeholder2" target="_blank">
                 <img src="https://via.placeholder.com/200" alt="Project 2 - Placeholder">
             </a>
 
             <a href="https://github.com/placeholder3" target="_blank">
                 <img src="https://via.placeholder.com/200" alt="Project 3 - Placeholder">
-            </a>
+            </a> -->
         </section>
 
         <section id="contact">
@@ -68,10 +90,11 @@
 
             <div id="accessibilityPanel">
                 <button id="toggleDyslexic" class="dyslexic-button">Dyslexic Font</button>
-                <button id="toggleDarkMode" class="dyslexic-button">Dark Mode</button>
+                <button id="toggleDarkMode" class="dark-toggle dyslexic-button">Dark Mode</button>
             </div>
         </div>
 
-        <script src="script.js"></script>
+        <script src="scripts/script.js"></script>
+        <script src="scripts/week2.js"></script>
     </body>
 </html>

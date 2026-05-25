@@ -39,14 +39,13 @@ dysToggle.addEventListener("click", () => {
     document.body.classList.toggle("dyslexic-mode");
 });
 
-// Dark mode toggle
-const darkToggle = document.getElementById("toggleDarkMode");
-darkToggle.addEventListener("click", () => {
-    const isDark = document.body.classList.toggle("dark-mode")
-    darkToggle.textContent = isDark ? "Light Made" : "Dark Mode";
-});
-
 // Helper function to determine if device is a touchscreen
 function isTouchDevice() {
     return window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 }
+
+// const darkToggle = document.getElementById("toggleDarkMode");
+// darkToggle.addEventListener("click", () => {
+//     const isDark = document.body.classList.toggle("dark-mode")
+//     darkToggle.textContent = isDark ? "Light Made" : "Dark Mode";
+// });
