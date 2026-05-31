@@ -1,3 +1,6 @@
+/* =========================
+   General Styles
+========================= */
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -5,6 +8,9 @@ body {
     line-height: 1.6;
 }
 
+/* =========================
+   Header + Navigation
+========================= */
 header {
     background: #333;
     color: white;
@@ -12,54 +18,54 @@ header {
     text-align: center;
 }
 
+/* Center dark mode button */
+#darkModeSlider {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Center navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
 nav a {
     color: blue;
-    margin: 0 1rem;
     text-decoration: none;
     font-weight: bold;
 }
 
+/* =========================
+   Sections
+========================= */
 section {
+    max-width: 600px;
+    margin: 2rem auto;
     padding: 2rem;
 }
 
-.projects a {
-    display: flex;
-    flex-direction: column;
-    
+h2 {
+    text-align: center;
 }
 
-.projects img {
-    width: 25%;
-    height: 25%;
-    object-fit: contain;
-    margin-right: 1rem;
-    border-radius: 8px;
-}
-
-form input, form textarea {
-    display: block;
-    width: 300px;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-}
-
-form textarea {
-    resize: none;
-    overflow: auto;
-    overflow-wrap: break-word;
-}
-
+/* =========================
+   Featured Section
+========================= */
 #featured {
-    padding: 2rem;
+    text-align: center;
 }
 
 .feature-box {
     border: 2px solid #444;
     padding: 1rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem auto;
     border-radius: 8px;
     background-color: #f4f4f4;
+    max-width: 500px;
+    text-align: center;
 }
 
 .dark-mode .feature-box {
@@ -67,27 +73,73 @@ form textarea {
     border-color: #888;
 }
 
-#darkModeSlider {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 1rem;
-    font-size: 1.1rem;
-}
-
-#universityResources {
+#universityResources,
+#personalProjects {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.5rem;
 }
 
+#personalProjects a {
+    display: flex;
+    justify-content: center;
+}
+
 #personalProjects img {
-    width: 50%;
-    height: 50%;
+    width: 75%;
+    height: 75%;
     object-fit: contain;
     border-radius: 8px;
 }
 
-.hidden {
-    display: none;
+/* =========================
+   Projects Section
+========================= */
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects a {
+    display: inline-block;
+    width: 600px;
+    height: 300px;
+    margin-bottom: 1rem;
+}
+
+.projects img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* =========================
+   Contact Form
+========================= */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact input,
+#contact textarea {
+    width: 300px;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+#contact textarea {
+    resize: none;
+    overflow-wrap: break-word;
+}
+
+/* =========================
+   Utility / Misc
+========================= */
+#darkModeSlider button {
+    cursor: pointer;
 }

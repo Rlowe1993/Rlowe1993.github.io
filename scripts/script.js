@@ -44,8 +44,40 @@ function isTouchDevice() {
     return window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 }
 
-// const darkToggle = document.getElementById("toggleDarkMode");
-// darkToggle.addEventListener("click", () => {
-//     const isDark = document.body.classList.toggle("dark-mode")
-//     darkToggle.textContent = isDark ? "Light Made" : "Dark Mode";
-// });
+// Conditional Logic for Featured Content
+
+const projectImages = document.querySelectorAll("#projects img");
+const universityDiv = document.getElementById("universityResources");
+const personalDiv = document.getElementById("personalProjects");
+
+if (projectImages.length < 3) {
+    universityDiv.style.display = "";
+    personalDiv.style.display = "";
+} else {
+    universityDiv.style.display = "none";
+    personalDiv.style.display = "";
+}
+
+// Skills Loop
+
+const skills = ["HTML", "CSS", "Python", "JavaScript", "Rust"];
+const skillsList = document.getElementById("skillsList");
+
+skills.forEach(skill => {
+    const li = document.createElement("li");
+    li.textContent = skill;
+    skillsList.appendChild(li);
+});
+
+// Dark mode toggle
+const darkButtons = document.querySelectorAll(".dark-toggle");
+
+darkButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("dark-mode");
+
+        darkButtons.forEach(btn => {
+            btn.textContent = isDark ? "Light Mode" : "Dark Mode";
+        });
+    });
+});

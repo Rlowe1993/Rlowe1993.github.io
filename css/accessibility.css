@@ -1,31 +1,33 @@
+/* =========================
+   Font Definitions
+========================= */
 @font-face {
     font-family: 'OpenDyslexic';
-    src: url('fonts/OpenDyslexic-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../fonts/OpenDyslexic-Regular.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'OpenDyslexic';
-    src: url('fonts/OpenDyslexic-Bold.otf') format('opentype');
+    src: url('../fonts/OpenDyslexic-Bold.otf') format('opentype');
     font-weight: bold;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'OpenDyslexic';
-    src: url('fonts/OpenDyslexic-Italic.otf') format('opentype');
-    font-weight: normal;
+    src: url('../fonts/OpenDyslexic-Italic.otf') format('opentype');
     font-style: italic;
 }
 
 @font-face {
     font-family: 'OpenDyslexic';
-    src: url('fonts/OpenDyslexic-BoldItalic.otf') format('opentype');
+    src: url('../fonts/OpenDyslexic-BoldItalic.otf') format('opentype');
     font-weight: bold;
     font-style: italic;
 }
 
+/* =========================
+   Accessibility Modes
+========================= */
 .dyslexic-mode {
     font-family: 'OpenDyslexic', Arial, Helvetica, sans-serif;
 }
@@ -34,6 +36,9 @@
     font-family: 'OpenDyslexic', Arial, Helvetica, sans-serif;
 }
 
+/* =========================
+   Accessibility Menu
+========================= */
 #accessibilityMenu {
     position: fixed;
     bottom: 20px;
@@ -81,11 +86,17 @@
     background-color: #777;
 }
 
+/* =========================
+   Dark Mode
+========================= */
 .dark-mode {
     background-color: #111;
     color: #eee;
 }
 
+/* =========================
+   Hover Behavior (Desktop)
+========================= */
 @media (hover: hover) and (pointer: fine) {
     #accessibilityMenu:hover #accessibilityPanel {
         display: flex;
