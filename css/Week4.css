@@ -1,0 +1,60 @@
+/* =========================
+   Modal Window
+========================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+}
+
+.dark-mode .modal {
+    background: #222;
+    color: #eee;
+}
+
+/* =========================
+   Submit Tooltip
+========================= */
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    content: "Click to send your message!";
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+}
+
+.dark-mode .tooltip::after {
+    background: #eee;
+    color: #111;
+}

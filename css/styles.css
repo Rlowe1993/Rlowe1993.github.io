@@ -18,14 +18,9 @@ header {
     text-align: center;
 }
 
-/* Center dark mode button */
-#darkModeSlider {
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-}
-
-/* Center navigation */
+/* =========================
+   Center navigation
+========================= */
 nav {
     display: flex;
     justify-content: center;
@@ -66,11 +61,6 @@ h2 {
     background-color: #f4f4f4;
     max-width: 500px;
     text-align: center;
-}
-
-.dark-mode .feature-box {
-    background-color: #222;
-    border-color: #888;
 }
 
 #universityResources,
@@ -140,6 +130,53 @@ h2 {
 /* =========================
    Utility / Misc
 ========================= */
+
+.section-hover {
+    border: 3px solid #007acc;
+}
+
+/* =========================
+   Dark Mode
+========================= */
+.dark-mode {
+    background-color: #111;
+    color: #eee;
+}
+
+.dark-mode a {
+    color: #4ea3ff;
+}
+
+.dark-mode #universityResources a {
+    color: #4ea3ff;
+}
+
+.dark-mode .feature-box {
+    background-color: #222;
+    border-color: #888;
+}
+
+#darkModeSlider {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
 #darkModeSlider button {
-    cursor: pointer;
+    background-color: #111;
+    color: #eee;
+}
+
+.dark-mode #darkModeSlider button {
+    background-color: #eee;
+    color: #111;
+}
+
+/* =========================
+   Hover Behavior (Desktop)
+========================= */
+@media (hover: hover) and (pointer: fine) {
+    #accessibilityMenu:hover #accessibilityPanel {
+        display: flex;
+    }
 }

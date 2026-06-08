@@ -2,25 +2,26 @@
    Font Definitions
 ========================= */
 @font-face {
-    font-family: 'OpenDyslexic';
-    src: url('../fonts/OpenDyslexic-Regular.otf') format('opentype');
+    /*OpenDyslexic-Regular*/
+    font-family: "OpenDyslexic";
+    src: url("../fonts/OpenDyslexic-Regular.otf") format("opentype");
 }
-
 @font-face {
-    font-family: 'OpenDyslexic';
-    src: url('../fonts/OpenDyslexic-Bold.otf') format('opentype');
+    /*OpenDyslexic-Bold*/
+    font-family: "OpenDyslexic";
+    src: url("../fonts/OpenDyslexic-Bold.otf") format("opentype");
     font-weight: bold;
 }
-
 @font-face {
-    font-family: 'OpenDyslexic';
-    src: url('../fonts/OpenDyslexic-Italic.otf') format('opentype');
+    /*OpenDyslexic-Italic*/
+    font-family: "OpenDyslexic";
+    src: url("../fonts/OpenDyslexic-Italic.otf") format("opentype");
     font-style: italic;
 }
-
 @font-face {
-    font-family: 'OpenDyslexic';
-    src: url('../fonts/OpenDyslexic-BoldItalic.otf') format('opentype');
+    /*OpenDyslexic-BoldItalic*/
+    font-family: "OpenDyslexic";
+    src: url("../fonts/OpenDyslexic-BoldItalic.otf") format("opentype");
     font-weight: bold;
     font-style: italic;
 }
@@ -29,16 +30,22 @@
    Accessibility Modes
 ========================= */
 .dyslexic-mode {
-    font-family: 'OpenDyslexic', Arial, Helvetica, sans-serif;
+    font-family: "OpenDyslexic", Arial, Helvetica, sans-serif;
 }
-
 .dyslexic-button {
-    font-family: 'OpenDyslexic', Arial, Helvetica, sans-serif;
+    font-family: "OpenDyslexic", Arial, Helvetica, sans-serif;
 }
 
 /* =========================
    Accessibility Menu
 ========================= */
+.button-base {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
 #accessibilityMenu {
     position: fixed;
     bottom: 20px;
@@ -47,12 +54,8 @@
 }
 
 #accessibilityToggle {
-    padding: 0.6rem 0.9rem;
     background-color: #444;
     color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
     font-size: 1.4rem;
 }
 
@@ -61,44 +64,16 @@
 }
 
 #accessibilityPanel {
-    display: none;
-    position: absolute;
     bottom: 100%;
     right: 0;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 8px;
-    flex-direction: column;
-    width: max-content;
 }
 
 #accessibilityPanel button {
     margin-bottom: 8px;
-    padding: 0.5rem 1rem;
     background-color: #555;
     color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
 }
 
 #accessibilityPanel button:hover {
     background-color: #777;
-}
-
-/* =========================
-   Dark Mode
-========================= */
-.dark-mode {
-    background-color: #111;
-    color: #eee;
-}
-
-/* =========================
-   Hover Behavior (Desktop)
-========================= */
-@media (hover: hover) and (pointer: fine) {
-    #accessibilityMenu:hover #accessibilityPanel {
-        display: flex;
-    }
 }
