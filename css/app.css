@@ -1,0 +1,65 @@
+/* =========================
+   Header + Navigation
+========================= */
+header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =========================
+   Projects Section
+========================= */
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects a {
+    display: inline-block;
+    width: 600px;
+    height: 300px;
+    margin-bottom: 1rem;
+}
+
+.projects img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* =========================
+   Contact Form
+========================= */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact input,
+#contact textarea {
+    width: 300px;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+#contact textarea {
+    resize: none;
+    overflow-wrap: break-word;
+}

@@ -1,23 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/styles.css" />
+
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/components.css" />
         <link rel="stylesheet" href="css/accessibility.css" />
-        <link rel="stylesheet" href="css/panels.css" />
-        <link rel="stylesheet" href="css/Week4.css" />
+        <link rel="stylesheet" href="css/themes.css" />
+        <link rel="stylesheet" href="css/app.css" />
+        <link rel="stylesheet" href="css/Week5.css" />
+
         <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-        <script src="scripts/week4.js"></script>
-        <script src="scripts/script.js"></script>
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+
+        <script src="scripts/darkmode.js" defer></script>
+        <script src="scripts/accessibility.js" defer></script>
+        <script src="scripts/ui.js" defer></script>
+        <script src="scripts/form.js" defer></script>
+        <script src="scripts/week5.js" defer></script>
 
         <title>Randall Lowe's Homepage</title>
     </head>
 
     <body>
-        <!-- WEEK 4 MODAL WINDOW -->
+        <!-- Modal -->
         <dialog id="welcomeOverlay" class="modal-overlay">
             <div class="modal">
                 <p>This page is a work in progress</p>
@@ -55,45 +64,45 @@
             <div id="universityResources" class="feature-box">
                 <h3>University Resources</h3>
                 <a href="http://ecpi.edu/" target="_blank">ECPI Homepage</a>
-                <a href="http://chsn.ecpi.net/">
-                    ECPI Charleston Campus Homepage</a
-                >
+                <a href="http://chsn.ecpi.net/" target="_blank">
+                    ECPI Charleston Campus Homepage
+                </a>
             </div>
 
             <div id="personalProjects" class="feature-box">
                 <h3>Personal Projects</h3>
                 <a href="https://github.com/Rlowe1993/cd-util" target="_blank">
                     <img
-                        src="images/cd-util.png"
-                        alt="GitHub Preview - cd-util" />
+                        src="../images/cd-util.png"
+                        alt="GitHub Preview - cd-util"
+                    />
                 </a>
             </div>
         </section>
 
         <section id="projects" class="projects">
             <h2>My Projects</h2>
-
-            <a href="https://github.com/Rlowe1993/cd-util" target="_blank">
-                <img src="images/cd-util.png" alt="GitHub Preview - cd-util" />
-            </a>
         </section>
 
         <section id="contact">
             <h2>Contact Me</h2>
-
             <form>
                 <input
                     type="text"
                     id="contactName"
                     placeholder="Your Name"
-                    required />
+                    required
+                />
                 <input type="email" placeholder="Your Email Address" required />
                 <input type="text" placeholder="Subject" required />
                 <textarea
                     placeholder="Your Message"
                     rows="5"
-                    required></textarea>
-                <button type="submit" id="contactSubmit">Submit</button>
+                    required
+                ></textarea>
+                <button type="submit" id="contactSubmit" class="tooltip">
+                    Submit
+                </button>
             </form>
         </section>
 

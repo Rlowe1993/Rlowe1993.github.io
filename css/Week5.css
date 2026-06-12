@@ -1,0 +1,78 @@
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px; /* optional, keeps it centered */
+    margin: 0 auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+    width: 100%; /* ensures slides stay inside */
+}
+
+.carousel-slide {
+    flex: 0 0 100%; /* each slide fills the viewport */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    text-align: center;
+}
+
+.carousel-slide img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Slim bottom buttons */
+.carousel-btn {
+    position: absolute;
+    bottom: 9rem;
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    z-index: 10;
+    border-radius: 4px;
+}
+
+.carousel-btn:hover {
+    opacity: 1;
+}
+
+.carousel-prev {
+    left: 33%;
+}
+
+.carousel-next {
+    right: 33%;
+}
+
+/* Dots below buttons */
+.carousel-indicators {
+    position: absolute;
+    bottom: 9.5rem; /* distance from bottom edge */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: #222;
+}
