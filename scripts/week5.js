@@ -1,12 +1,14 @@
 /* ============================================================
-   Week 5 – Dynamic Project Rendering (Instructions.txt)
-   This file contains ONLY the new assignment code.
+   Week 5 – Dynamic Project Rendering (Assignment)
    ============================================================ */
 
-/* ------------------------------------------------------------
-   1. Create Custom Project Objects
------------------------------------------------------------- */
-
+/**
+ * ------------------------------------------------------------
+ * 1. Create Custom Project Objects
+ * ------------------------------------------------------------
+ * Each object represents a project with metadata used to
+ * dynamically render the carousel.
+ */
 const projectData = [
     {
         title: "cd-util",
@@ -45,41 +47,51 @@ const projectData = [
     },
 ];
 
-/* ------------------------------------------------------------
-   2. Store and Parse Information
------------------------------------------------------------- */
-
+/**
+ * ------------------------------------------------------------
+ * 2. Store and Parse Information
+ * ------------------------------------------------------------
+ * @function loadProjects
+ * @description Loads project data from sessionStorage if available,
+ * otherwise stores the default projectData array.
+ * @returns {Array<Object>} Array of project objects.
+ */
 function loadProjects() {
     let stored = sessionStorage.getItem("projects");
 
+    // If no data exists, store the default projectData
     if (!stored) {
-        // No data exists → store it
         sessionStorage.setItem("projects", JSON.stringify(projectData));
         stored = sessionStorage.getItem("projects");
     }
 
-    // Parse stored data
+    // Parse stored JSON back into JavaScript objects
     return JSON.parse(stored);
 }
 
-/* ------------------------------------------------------------
-   3. Render Projects Dynamically
------------------------------------------------------------- */
-
+/**
+ * ------------------------------------------------------------
+ * 3. Render Projects Dynamically
+ * ------------------------------------------------------------
+ * @function renderProjects
+ * @description Dynamically creates a carousel structure containing
+ * project slides, navigation buttons, and dot indicators.
+ * @returns {void}
+ */
 function renderProjects() {
     const projects = loadProjects();
     const projectSection = document.querySelector("#projects");
     if (!projectSection) return;
 
-    // Carousel wrapper
+    // Create carousel wrapper
     const carousel = document.createElement("div");
     carousel.classList.add("carousel");
 
-    // Track (slides container)
+    // Create track container for slides
     const track = document.createElement("div");
     track.classList.add("carousel-track");
 
-    // Create slides
+    // Generate slides for each project
     projects.forEach((proj) => {
         const slide = document.createElement("div");
         slide.classList.add("carousel-slide");
@@ -106,7 +118,7 @@ function renderProjects() {
     // Add track to carousel
     carousel.appendChild(track);
 
-    // Add navigation buttons
+    // Create navigation buttons
     const prevBtn = document.createElement("button");
     prevBtn.classList.add("carousel-btn", "carousel-prev");
     prevBtn.textContent = "‹";
@@ -118,11 +130,10 @@ function renderProjects() {
     carousel.appendChild(prevBtn);
     carousel.appendChild(nextBtn);
 
-    // After creating nextBtn and prevBtn
+    // Create dot indicators
     const indicators = document.createElement("div");
     indicators.classList.add("carousel-indicators");
 
-    // Create dots
     projects.forEach((_, i) => {
         const dot = document.createElement("span");
         dot.classList.add("carousel-dot");
@@ -132,17 +143,20 @@ function renderProjects() {
 
     carousel.appendChild(indicators);
 
-    // Add everything to the section
+    // Append carousel to the projects section
     projectSection.appendChild(carousel);
 }
 
-/* ------------------------------------------------------------
-   4. Initialize on Page Load
------------------------------------------------------------- */
-
+/**
+ * ------------------------------------------------------------
+ * 4. Initialize Carousel on Page Load
+ * ------------------------------------------------------------
+ * Handles navigation, auto-scroll, and looping behavior.
+ */
 document.addEventListener("DOMContentLoaded", () => {
     renderProjects();
 
+    // Select carousel elements
     const track = document.querySelector(".carousel-track");
     const slides = Array.from(document.querySelectorAll(".carousel-slide"));
     const prevBtn = document.querySelector(".carousel-prev");
@@ -151,13 +165,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!track || slides.length === 0) return;
 
-    let index = 1; // start on the first real slide
+    let index = 1; // Start on first real slide (after lastClone)
     const slideWidth = slides[0].clientWidth;
     let autoScrollInterval;
 
-    // Position track initially
+    // Initial position
     track.style.transform = `translateX(-${slideWidth * index}px)`;
 
+    /**
+     * @function updateCarousel
+     * @description Updates the carousel position and active dot.
+     */
     function updateCarousel() {
         track.style.transition = "transform 0.4s ease";
         track.style.transform = `translateX(-${slideWidth * index}px)`;
@@ -166,25 +184,35 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
+    /**
+     * @function startAutoScroll
+     * @description Starts automatic slide advancement every few seconds.
+     */
     function startAutoScroll() {
-        stopAutoScroll(); // clear any existing interval
+        stopAutoScroll(); // Prevent multiple intervals
         autoScrollInterval = setInterval(() => {
             index++;
             updateCarousel();
-        }, 5000); // every 5 seconds
+        }, 5000); // Advance every 5 seconds
     }
 
+    /**
+     * @function stopAutoScroll
+     * @description Stops the automatic scrolling interval.
+     */
     function stopAutoScroll() {
         clearInterval(autoScrollInterval);
     }
 
+    // Next button click → move forward
     nextBtn.addEventListener("click", () => {
         if (index >= slides.length - 1) return;
         index++;
         updateCarousel();
-        startAutoScroll();
+        startAutoScroll(); // Restart timer after manual navigation
     });
 
+    // Previous button click → move backward
     prevBtn.addEventListener("click", () => {
         if (index <= 0) return;
         index--;
@@ -192,14 +220,16 @@ document.addEventListener("DOMContentLoaded", () => {
         startAutoScroll();
     });
 
+    // Dot click → jump to specific slide
     dots.forEach((dot, i) => {
         dot.addEventListener("click", () => {
-            index = i;
+            index = i + 1; // Offset for cloned slides
             updateCarousel();
             startAutoScroll();
         });
     });
 
+    // Handle seamless looping after transition ends
     track.addEventListener("transitionend", () => {
         if (slides[index].classList.contains("first-clone")) {
             track.style.transition = "none";
@@ -213,5 +243,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Start auto-scroll when page loads
     startAutoScroll();
 });
